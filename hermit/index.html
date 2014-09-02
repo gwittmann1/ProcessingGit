@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Hermit</title>
+		<style type="text/css">
+			p {
+				color: white;
+				text-align: center; }
+			legend {
+				color: white;
+				text-align: left; }
+			.fieldset-auto-width {
+         		display: inline-block;
+				text-align: center; }
+		</style>
+	    <script type="text/javascript" src="processing.js"></script>
+		<script type="text/javascript" src="jscolor/jscolor.js"></script>
+		<script type="text/javascript">
+	        
+	        function scale(id) {
+	        	var pjs = Processing.getInstanceById(id);
+	            var d = document.getElementById('scale').value;
+	            pjs.setScale(d);
+			}
+	        function hermitColor(id) {
+	        	var pjs = Processing.getInstanceById(id);
+	            var c = document.getElementById('hermitColor').value;
+	            pjs.setColor(c);
+			}
+	   	
+        </script>
+	</head>
+	<body style="background-color: #252525">
+		<div style="text-align: center;">
+			<p><canvas id="hermit" data-processing-sources="hermit.pde"></canvas></p>
+			<fieldset class="fieldset-auto-width">
+				<legend>Hermit Options</legend>		
+				<p>Scale
+					<input
+					type="range"  
+					id="scale"   
+					onchange="scale('hermit')"
+					value="20" 
+					size="4" 
+					min="5" max="100"
+					style="width: 100px"
+					</input>
+				</p>
+				<p>Color
+					<input 
+					class="color" 
+					id="hermitColor" 
+					value = "FF0000"
+					size="7"
+					onchange="hermitColor('hermit')">
+					</input>
+					</p>
+			</fieldset>
+		</div>
+	</body>
+</html>

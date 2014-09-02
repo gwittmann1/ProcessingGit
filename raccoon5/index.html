@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Raccoon</title>
+		<style type="text/css">
+			p {
+				color: white;
+				text-align: center; }
+			legend {
+				color: white;
+				text-align: left; }
+			.fieldset-auto-width {
+         		display: inline-block;
+				text-align: center; }
+		</style>
+	    <script type="text/javascript" src="processing.js"></script>
+		<script type="text/javascript">
+	        
+	        function scale(id) {
+	        	var pjs = Processing.getInstanceById(id);
+	            var d = document.getElementById('scale').value;
+	            pjs.setScale(d);
+			}
+			function foods(id) {
+	        	var pjs = Processing.getInstanceById(id);
+	            var n = document.getElementById('Food').value;
+	            pjs.setFood(numFood);
+			}
+	       
+        </script>
+	</head>
+	<body style="background-color: #252525">
+		<div style="text-align: center;">
+			<p><canvas id="raccoon5" data-processing-sources="raccoon5.pde"></canvas></p>
+			<fieldset class="fieldset-auto-width">
+				<legend>Raccoon Options</legend>		
+				<p>Raccoon Scale
+					<input
+					type="range"  
+					id="scale"   
+					onchange="scale('raccoon5')"
+					value="3" 
+					size="4" 
+					min="1" max="5"
+					style="width: 100px"
+					</input>
+					</p>
+				<p>Number of Food
+					<input 
+					type="number" 
+					id="food" 
+					onchange="food('raccoon5')"
+					value="1" 
+					min="1" max="10">
+					</input>
+				</p>
+			</fieldset>
+		</div>
+	</body>
+</html>
