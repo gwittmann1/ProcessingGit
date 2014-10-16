@@ -6,10 +6,10 @@ class TBands {
     noFill();
     strokeWeight(0.001);
     //Edges
-    rect(80, 10, 20, 200);
-    rect(1700, 10, 20, 200);
+    rect(80, 10, 20, 120);
+    rect(1031, 10, 20, 120);
     //Connector
-    rect(100, 95, 1600, 15);
+    rect(100, 60, 931, 15);
     //Diagonal connectors
     beginShape();
     
@@ -17,8 +17,8 @@ class TBands {
     //Blanks
     fill(255);
     noStroke();
-    rect(95, 96, 10, 14);
-    rect(1695, 96, 10, 14);
+    rect(95, 61, 10, 14);
+    rect(1026, 61, 10, 14);
     
     //fix
     stroke(0);

@@ -2,6 +2,7 @@ class Sconn {
   Sconn() {
   }
   void draw(float xTr) {
+    translate(0, -16);
     translate(xTr, 0);
     for (int i = 0; i < 120; i = i+30) {
       translate(30, 0);
@@ -15,5 +16,6 @@ class Sconn {
       vertex(120, 140);
       endShape();
     }
+    translate(0, 16);
   }
 }

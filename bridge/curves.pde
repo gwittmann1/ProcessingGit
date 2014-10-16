@@ -7,13 +7,14 @@ class Curve {
     translate(0, yTranslation);
     noFill();
     strokeWeight(0.001);
-    bezier(45, 1300, 615, 700, 1185, 700, 1755, 1300);
-    bezier(15, 1300, 605, 670, 1195, 670, 1785, 1300);
+    bezier(45, 1300, width/3+45, 900, (width/3)*2-45, 900, 1086, 1300);
+    bezier(15, 1300, width/3+15, 870, (width/3)*2-15, 870, 1116, 1300);
     //Bottom lines
     line(15, 1300, 45, 1300);
-    line(1755, 1300, 1785, 1300);
+    line(1086, 1300, 1116, 1300);
 
     //top square
+    translate(-334.5, 154);
     beginShape();
     fill(255);
     strokeWeight(0.001);
@@ -36,16 +37,25 @@ class Curve {
     vertex(980, 834);
     vertex(980, 824);
     endShape();
+    //Top fillers
+    fill(255);
+    noStroke();
+    rect(800, 814, 20, 20);
+    rect(981, 814, 20, 20);
+    translate(334.5, -154); //////////
+    translate(-2, -2);
     //left square
+    stroke(0);
     beginShape();
     fill(255);
     strokeWeight(0.001);
-    vertex(100, 1216);
-    vertex(100, 1186);
-    vertex(131, 1186);
+    vertex(100.7, 1217);
+    vertex(100.7, 1187);
+    vertex(130.7, 1187);
     endShape();
     //left square hole
     rect(108, 1186, 15, 15);
+    translate(-664, 0);
     //right square
     beginShape();
     fill(255);
@@ -56,14 +66,11 @@ class Curve {
     endShape();
     //right square hole
     rect(1677, 1186, 15, 15);
-    //Top fillers
-    fill(255);
-    noStroke();
-    rect(800, 814, 20, 20);
-    rect(981, 814, 20, 20);
     //side fillers
-    rect(109, 1180, 14, 14);
+    noStroke();
     rect(1678, 1180, 14, 14);
+    translate(664, 0);
+    rect(109, 1180, 14, 14);
     //fix
     noFill();
     stroke(0);
