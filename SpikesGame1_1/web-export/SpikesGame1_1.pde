@@ -8,18 +8,26 @@ float y = 2;
 float c = 3;
 float b = 1;
 int score = 0;
+float spikeSwitch = 1000;
+float spikeSwitch2 = 1000;
 
 void draw() {
-  Spikes spikes = new Spikes();
+  LeftSpikes leftspikes = new LeftSpikes();
+  RightSpikes rightspikes = new RightSpikes();
   Bird bird = new Bird();
   topSpikes tSpikes = new topSpikes();
   background(240);
   bird.draw();
   tSpikes.draw();
   translate(-440, -50);
-  for (float spike=0; spike<800; spike=spike+50) {
-    translate(0, 50);
-    spikes.draw();
+  for (float spike=0; spike<800; spike=spike+100) {
+    translate(0, spikeSwitch);
+    leftspikes.draw();
+    translate(0, -spikeSwitch);
+  }
+  for (float spike2=0; spike2<800; spike=spike+100) {
+    translate(0, spikeSwitch2);
+    rightspikes.draw();
   }
 }
 
@@ -31,10 +39,12 @@ class Bird {
     if (a>=455) {
       s=1;
       score++;
+      spikeSwitch2 = 50*(random(2, 5));
     }
     if (a==25) {
       s=0;
       score++;
+      spikeSwitch = 50*(random(2, 5));
     }
     if (s==0) {
       a=a+6;
@@ -67,12 +77,20 @@ class Bird {
   }
 }
 
-class Spikes {
-  Spikes() {
+class LeftSpikes {
+  LeftSpikes() {
   }
   void draw() {
     fill(100);
     triangle(0, 0, 25, 25, 0, 50);
+  }
+}
+
+class RightSpikes {
+  RightSpikes() {
+  }
+  void draw() {
+    fill(100);
     triangle(480, 0, 455, 25, 480, 50);
   }
 }
@@ -90,4 +108,5 @@ class topSpikes {
     }
   }
 }
+
 
