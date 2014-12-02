@@ -52,9 +52,12 @@ void draw() {
       } else {
         rightspikes.draw();
       }
-      float leftD = dist(a, y, 25, spikeY);
-      float rightD = dist(a, y, 455, spikeY);
-      if (leftD < 12.5 || rightD < 12.5) {
+      float leftD = dist(a, y, 25, spikeY-12.5);
+      float rightD = dist(a, y, 455, spikeY-12.5);
+      if (leftD < 12.5 && leftD > -12.5 && s==1) {
+        gameState=2;
+      }
+      if (rightD < 25 && rightD > -12.5 && s==0) {
         gameState=2;
       }
       popMatrix();
