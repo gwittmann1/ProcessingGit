@@ -43,6 +43,9 @@ class Bird {
     textSize(100);
     fill(240);
     text(score, width/2, 290);
+    textSize(30);
+    fill(252, 182, 3);
+    text("Candies:" + candyScore, width/2, 420);
     //bird
     fill(birdColor);
     ellipse(a, y, 50, 50);
